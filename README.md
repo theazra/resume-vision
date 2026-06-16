@@ -2,6 +2,7 @@
 
 AI-powered web application that helps users build, analyze, and optimize their CVs while preparing for job applications.
 
+## Demo
 ![Demo](video_demo.gif)
 
 ---
