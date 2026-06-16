@@ -1,0 +1,375 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --sidebar-bg: #243A5E;
+    /* ResumeVision dark blue */
+    --sidebar-text: rgba(255, 255, 255, 0.95);
+    --main-bg: #ffffff;
+    --text-header: #1e293b;
+    --text-body: #475569;
+    /* Tailwind slate-600 */
+    --accent-color: #2563eb;
+    /* Tailwind blue-600 */
+    --accent-light: #dbeafe;
+    /* Tailwind blue-100 */
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* Print Reset & Visibility rules */
+@media print {
+    @page {
+        margin: 0;
+        size: A4;
+    }
+
+    body {
+        margin: 0;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background-color: white;
+    }
+
+    /* Hide everything that isn't the resume */
+    .no-print {
+        display: none !important;
+    }
+
+    /* Ensure resume container is visible and styled correctly */
+    .resume-container {
+        width: 210mm !important;
+        height: 297mm !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        page-break-after: always;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .sidebar {
+        width: 35% !important;
+        background-color: #243A5E !important;
+        color: #ffffff !important;
+    }
+
+    .sidebar * {
+        color: #ffffff !important;
+    }
+
+    .main-content {
+        width: 65% !important;
+    }
+}
+
+/* Main Container - A4 Size */
+.resume-container {
+    width: 210mm;
+    min-height: 297mm;
+    background-color: var(--main-bg);
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-primary);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    /* Ensure colors print correctly */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+/* Responsive Rules for Screen */
+@media screen and (max-width: 768px) {
+    .resume-container {
+        width: 100%;
+        min-height: auto;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .profile-img,
+    .profile-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* --- Left Sidebar --- */
+
+/* ===== LEFT SIDEBAR (ResumeVision) ===== */
+.sidebar {
+    background-color: #243A5E;
+    /* ResumeVision dark blue */
+    color: rgba(255, 255, 255, 0.95);
+    width: 35%;
+    /* Fixed ratio from original */
+    padding: 40px 30px;
+    /* Preserve original padding */
+    display: flex;
+    flex-direction: column;
+}
+
+/* SVE U SIDEBARU BIJELO */
+.sidebar * {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* PROFILNA SLIKA BORDER */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+.sidebar-section {
+    margin-bottom: 40px;
+}
+
+/* NASLOVI SEKCIJA */
+.sidebar-title {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Keep border from original structure if needed, or remove if user implies exact replacement only. Leaving for structure. */
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+/* CONTACT */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    /* Preserve layout spacing */
+}
+
+/* IKONE */
+.contact-icon {
+    color: #ffffff;
+    opacity: 0.85;
+    min-width: 16px;
+}
+
+/* EDUCATION */
+.edu-item {
+    margin-bottom: 20px;
+}
+
+.edu-degree {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+}
+
+.edu-school {
+    font-size: 0.8rem;
+    opacity: 0.85;
+    font-style: italic;
+    margin-bottom: 2px;
+}
+
+.edu-year {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Reference Items */
+.ref-item {
+    margin-bottom: 20px;
+}
+
+.ref-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.ref-role {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.ref-contact {
+    font-size: 12px;
+    font-weight: 300;
+    display: block;
+}
+
+/* --- Right Main Content --- */
+.main-content {
+    width: 65%;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header block */
+.header-block {
+    margin-bottom: 50px;
+}
+
+.header-name {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-header);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin: 0 0 10px 0;
+}
+
+.header-title {
+    font-size: 16px;
+    color: var(--text-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--text-header);
+}
+
+/* Main Sections */
+.main-section {
+    margin-bottom: 45px;
+}
+
+.main-title {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-header);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    /* Optional: Remove the border-bottom below if strictly matching image, image has no line for main titles usually, or subtle one */
+    /* border-bottom: 2px solid var(--accent-light); */
+}
+
+/* Profile Text */
+.profile-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+/* Experience List */
+.exp-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.exp-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-header);
+}
+
+.exp-date {
+    font-size: 12px;
+    font-weight: 500;
+    color: #8899a6;
+    text-transform: uppercase;
+}
+
+.exp-company {
+    font-size: 13px;
+    font-weight: 600;
+    /* Bold as asked */
+    color: var(--text-header);
+    margin-bottom: 10px;
+    display: block;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.exp-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+/* Skills Grid (2 Column) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.skill-bullet {
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    min-height: 6px;
+    background-color: var(--accent-color);
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.skill-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-body);
+    line-height: 1.5;
+}
